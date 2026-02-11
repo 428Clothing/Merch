@@ -186,7 +186,7 @@
         var iframe = document.querySelector('iframe[name="hidden_iframe"]');
         var responseMessage = document.getElementById('responseMessage');
 
-        ifrane.onload = function() {
+        iframe.onload = function() {
           if(submitted) {
             responseMessage.textContent = "Submitted";
             document.querySelector('form').reset();
@@ -197,6 +197,7 @@
        
 </body>
 </html>
+
 
 
 
