@@ -185,7 +185,7 @@
     const responseMessage = document.getElementById('responseMessage');
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault()
+      e.preventDefault();
 
         const email = form.email.value;
         const url ="https://script.google.com/macros/s/AKfycbzuGL07XhGNmpteHM2dFu4iJEUKPXwi8EZp8bXOEwZBoP-sLcKUQv4xUhmPJUU_9dyqHg/exec";
@@ -194,8 +194,8 @@
             method: "POST"
             mode: "no-cors",
             headers: {
-                    "Content-Type": "application/ x-www-form-urlencod
-      }
+                    "Content-Type": "application/x-www-form-urlencoded"
+      },
       body: 'email=${encodeURIComponent(email)}'
     })
     .then(() => {
@@ -213,6 +213,7 @@
        
 </body>
 </html>
+
 
 
 
