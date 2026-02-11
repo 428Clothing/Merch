@@ -190,14 +190,18 @@
           if(submitted) {
             responseMessage.textContent = "Submitted";
             document.querySelector('form').reset();
+           setTimeout(function() { responseMessage.textContent = "";
+                                 },3000);                    
             submitted = false;
           }
+       
         }
-        setTimeout(() => responseMessage.textContent = "", 4000);
+      
       </script>
        
 </body>
 </html>
+
 
 
 
