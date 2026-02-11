@@ -164,8 +164,7 @@
 
   <div>
     
-    <form action="https://script.google.com/macros/s/AKfycbzuGL07XhGNmpteHM2dFu4iJEUKPXwi8EZp8bXOEwZBoP-sLcKUQv4xUhmPJUU_9dyqHg/exec" method="POST">
-      
+    <form id="emailForm">   
       <input
         type="email"
         name="email"
@@ -175,17 +174,46 @@
       <button
         type="submit"
         style="padding:10px 20px; border:none; background-color:#4E342E; color:white; border-radius:5px; cursor:pointer;">
-
         Subscribe
       </button>
     </form> 
+    <p id="responseMessage" style="color:green; margin-top:10px;"></p>
   </div>    
+
+  <script 
+    const form = document.getElementById('emailForm);
+    const responseMessage = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault()
+
+        const email = form.email.value;
+        const url ="https://script.google.com/macros/s/AKfycbzuGL07XhGNmpteHM2dFu4iJEUKPXwi8EZp8bXOEwZBoP-sLcKUQv4xUhmPJUU_9dyqHg/exec";
+
+      fetch (url, {
+            method: "POST"
+            mode: "no-cors",
+            headers: {
+                    "Content-Type": "application/ x-www-form-urlencod
+      }
+      body: 'email=${encodeURIComponent(email)}'
+    })
+    .then(() => {
+      responseMessage.textContent = "Submitted";
+      form.reset();
+    })
+    .catch(() => {
+      responseMessage.textContent = "Something went wrong";
+      });
+    });
+  </script>
 
       
       
        
 </body>
 </html>
+
 
 
 
